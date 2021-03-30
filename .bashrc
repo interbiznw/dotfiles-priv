@@ -2,6 +2,45 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+printf '===========================\nTop 5 CPU processes (col 3)\n===========================\n'
+ps aux | sort -rk 3,3 | head -n 6
+
+printf '\n==============================\nTop 5 memory processes (col 4)\n==============================\n'
+ps aux | sort -rk 4,4 | head -n 6
+
+# Reload the shell (i.e. invoke as a login shell with .bash_profile, which likely this file)
+# switch -l to -i if you just want to reload this file
+alias rebash="exec $SHELL -l"
+
+# Nano this file, .inputrc or .nanorc
+alias profile="sudo nano ~/.bashrc"
+alias input="sudo nano ~/.inputrc"
+alias nanorc="sudo nano ~/.nanorc"
+
+# Display memory info totals
+alias meminfo="free -m -l -t"
+
+# Create a new dir and enter it
+function mkd() {
+        mkdir -p "$@" && cd "$@"
+}
+
+# Sudo nano a file
+function edit() {
+        sudo nano "$@"
+}
+
+# Zip this dir recursively
+function zipthis() {
+        thisdir=${PWD##*/}
+        sudo zip -r $thisdir.zip .
+}
+
+# List the sub dir sizes in human readable format as a summary
+function dirsizes() {
+        sudo du -h -s *
+}
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
