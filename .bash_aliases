@@ -16,11 +16,16 @@ getT(){
 getRawT(){
     bcli getrawtransaction "$1"
 }
+decoderawtx(){
+    bcli decoderawtransaction "$1"
+}
 
 alias ipp="curl icanhazip.com"
 alias ufws="sudo ufw status numbered"
 #ROOT ALIASES
-
+ta(){
+    tmux attach -t "$1"
+}
 banip() {
     #do things with parameters like $1 such as
     #mv "$1" "$1.bak"
@@ -31,5 +36,5 @@ unbanip() {
     #do things with parameters like $1 such as
     #mv "$1" "$1.bak"
     #iptables -D INPUT -s "$1" -j DROP
-    sudo ufw status numbered
+    sudo ufw delete "$1"
 }
