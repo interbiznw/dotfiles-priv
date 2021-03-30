@@ -2,11 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-printf '===========================\nTop 5 CPU processes (col 3)\n===========================\n'
-ps aux | sort -rk 3,3 | head -n 6
+#printf '===========================\nTop 5 CPU processes (col 3)\n===========================\n'
+#ps aux | sort -rk 3,3 | head -n 6
 
-printf '\n==============================\nTop 5 memory processes (col 4)\n==============================\n'
-ps aux | sort -rk 4,4 | head -n 6
+#printf '\n==============================\nTop 5 memory processes (col 4)\n==============================\n'
+#ps aux | sort -rk 4,4 | head -n 6
 
 # Reload the shell (i.e. invoke as a login shell with .bash_profile, which likely this file)
 # switch -l to -i if you just want to reload this file
