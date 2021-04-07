@@ -38,3 +38,7 @@ unbanip() {
     #iptables -D INPUT -s "$1" -j DROP
     sudo ufw delete "$1"
 }
+tails() {
+    tail -f $1 | perl -pe 's/'$2'/\e[1;32;40m$&\e[0m/g'
+}
+
