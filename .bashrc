@@ -124,6 +124,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+LS_COLORS="*.log=1;4;33"
+
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
