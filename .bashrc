@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
+echo "bash.rc running...."
 #printf '===========================\nTop 5 CPU processes (col 3)\n===========================\n'
 #ps aux | sort -rk 3,3 | head -n 6
 
@@ -166,6 +166,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
+    echo "adding bash_aliases"
     . ~/.bash_aliases
 fi
 
@@ -174,6 +175,7 @@ fi
 # ~/.bash_exports, instead of them here directly.
 
 if [ -f ~/.bash_exports ]; then
+    echo "adding bash_exports"
     . ~/.bash_exports
 fi
 
