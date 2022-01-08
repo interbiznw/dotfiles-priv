@@ -9,6 +9,11 @@ for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
     ln -s $PWD/$file ~/$file
 done
 
+if [ "$1" == "--installdev" ]; then
+        ~/dotfiles-priv/install-dev.sh
+else
+        echo "installing normally"
+fi
 
 
 echo "Installed"
