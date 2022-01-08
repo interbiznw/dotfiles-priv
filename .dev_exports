@@ -1,4 +1,4 @@
-.bash_exports# perl plenv
+# perl plenv
 # export PATH="$HOME/.plenv/bin:$PATH"
 # eval "$(plenv init -)"
 
@@ -14,7 +14,5 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-echo "don't delete this file as it enables developer exports to be added to bash.rc at runtime" > ~/.devexport_true
 
 echo "************** dev_exports done ******************"
