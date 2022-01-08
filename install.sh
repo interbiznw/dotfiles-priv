@@ -18,4 +18,6 @@ else
     sudo apt update && sudo apt -y install vim-scripts
 fi
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 echo "Installed"
