@@ -1,8 +1,8 @@
 if [ -n "$TMUX" ]; then
-
+    echo "Tmux session detected"
     # called inside tmux session, do tmux things
     . ~/.profile
-    echo "Tmux session detected"
+
     
 else
 
