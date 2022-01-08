@@ -181,6 +181,7 @@ fi
 
 
 if [ -f ~/.devexport_true ]; then
+    echo "adding dev_exports...."
     . ~/.dev_exports
 fi
 
