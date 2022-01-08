@@ -7,4 +7,14 @@ sudo apt-get install -y \
       
 sudo usermod -aG docker $USER
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+nvm install 14.18.2
+
+npm install -g http-server
+
+npm install -g yarn
+
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
 echo "Dev tools Installed"
