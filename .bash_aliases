@@ -1,4 +1,5 @@
 alias gti='git'
+alias gitstore='git config --global credential.helper store'
 #alias tmux='tmux -2'
 alias less='less -R'
 alias diff='colordiff'
