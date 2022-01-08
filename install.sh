@@ -11,9 +11,10 @@ done
 
 if [ "$1" == "--installdev" ]; then
         ~/dotfiles-priv/install-dev.sh
+        echo "Installed dev ver"
 else
-        echo "installing normally"
+        echo "installed Normally"
 fi
 
 
-echo "Installed"
+
