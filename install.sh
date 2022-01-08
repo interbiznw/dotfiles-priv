@@ -20,4 +20,10 @@ fi
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
+nvm install 14.18.2
+
+npm install -g http-server
+
+npm install -g yarn
+
 echo "Installed"
