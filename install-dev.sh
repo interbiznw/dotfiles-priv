@@ -26,5 +26,5 @@ if [ -f "$FILE" ]; then
 else
       ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 fi
-
+echo "don't delete this file as it enables developer exports to be added to bash.rc at runtime" > ~/.devexport_true
 echo "Dev tools Installed"
