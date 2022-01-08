@@ -26,4 +26,6 @@ npm install -g http-server
 
 npm install -g yarn
 
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
 echo "Installed"
