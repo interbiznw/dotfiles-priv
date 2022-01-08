@@ -19,6 +19,12 @@ npm install -g http-server
 
 npm install -g yarn
 
-ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+FILE=/home/$USER/.ssh/id_rsa
+
+if [ -f "$FILE" ]; then
+      echo ".ssh dir and id_rsa exists, skipping"
+else
+      ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+fi
 
 echo "Dev tools Installed"
