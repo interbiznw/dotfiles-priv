@@ -138,7 +138,7 @@ fi
 # ~/.bash_exports, instead of them here directly.
 
 if [ -f ~/.bash_exports ]; then
-    echo "adding bash_exports...."
+#    echo "adding bash_exports...."
     . ~/.bash_exports
 fi
 
@@ -147,7 +147,7 @@ fi
 # ~/.dev_exports, instead of them here directly.
 
 if [ -f ~/.devexport_true ]; then
-    echo "adding dev_exports...."
+#    echo "adding dev_exports...."
     . ~/.dev_exports
 fi
 
@@ -161,4 +161,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-echo "************** bash.rc done ******************"
+#echo "************** bash.rc done ******************"
