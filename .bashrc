@@ -8,39 +8,6 @@ echo "bash.rc running...."
 #printf '\n==============================\nTop 5 memory processes (col 4)\n==============================\n'
 #ps aux | sort -rk 4,4 | head -n 6
 
-# Reload the shell (i.e. invoke as a login shell with .bash_profile, which likely this file)
-# switch -l to -i if you just want to reload this file
-alias rebash="exec $SHELL -l"
-
-# Nano this file, .inputrc or .nanorc
-alias profile="sudo nano ~/.bashrc"
-alias input="sudo nano ~/.inputrc"
-alias nanorc="sudo nano ~/.nanorc"
-
-# Display memory info totals
-alias meminfo="free -m -l -t"
-
-# Create a new dir and enter it
-function mkd() {
-        mkdir -p "$@" && cd "$@"
-}
-
-# Sudo nano a file
-function edit() {
-        sudo nano "$@"
-}
-
-# Zip this dir recursively
-function zipthis() {
-        thisdir=${PWD##*/}
-        sudo zip -r $thisdir.zip .
-}
-
-# List the sub dir sizes in human readable format as a summary
-function dirsizes() {
-        sudo du -h -s *
-}
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -151,15 +118,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -179,6 +137,9 @@ if [ -f ~/.bash_exports ]; then
     . ~/.bash_exports
 fi
 
+# EXPORT DEV definitions
+# You may want to put all your exports into a separate file like
+# ~/.dev_exports, instead of them here directly.
 
 if [ -f ~/.devexport_true ]; then
     echo "adding dev_exports...."
