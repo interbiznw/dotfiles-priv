@@ -6,6 +6,9 @@ echo "bash_profile RUN FIRST"
 if [ -f ~/.bash-debug_true ]; then
     echo "echoing debugging strings"
     export DEBUG="TRUE"
+else
+    export DEBUG="FALSE"
+    #do nothing
 fi
 
 # if this is an xterm set the title to user@host:dir
@@ -20,6 +23,8 @@ esac
 if [ -n "$TMUX" ]; then
     if [ $DEBUG == "TRUE" ]; then
         echo "Tmux session detected"
+    else
+        #do nothing
     fi
     # called inside tmux session, do tmux things
     . ~/.profile
@@ -30,6 +35,8 @@ else
     # Trigger ~/.bashrc commands
     if [ $DEBUG == "TRUE" ]; then
         echo "this is bash_profile, running bash.rc"
+    else
+        #do nothing
     fi
     . ~/.bashrc
 fi
