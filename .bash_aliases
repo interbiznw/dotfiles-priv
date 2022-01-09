@@ -15,4 +15,26 @@ alias ipp="curl icanhazip.com"
 alias ufws="sudo ufw status numbered"
 #ROOT ALIASES
 
+# Reload the shell (i.e. invoke as a login shell with .bash_profile, which likely this file)
+# switch -l to -i if you just want to reload this file
+alias rebash="exec $SHELL -l"
+
+# Nano this file, .inputrc or .nanorc
+alias profile="sudo nano ~/.bashrc"
+alias input="sudo nano ~/.inputrc"
+alias nanorc="sudo nano ~/.nanorc"
+
+# Display memory info totals
+alias meminfo="free -m -l -t"
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+
 echo "************** bash_aliases done ******************"
