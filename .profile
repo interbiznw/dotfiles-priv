@@ -31,3 +31,14 @@ if [ -f ~/.devexport_true ]; then
   fi
   . ~/.dev_exports
 fi
+
+# Load Bash Wrappers
+# You may want to put all your exports into a separate file like
+# ~/.bash_wrappers, instead of them here directly.
+
+if [ -f ~/.bash_wrappers ]; then
+	if [ $DEBUG == "TRUE" ]; then
+		echo "adding bash_wrappers...."
+	fi
+	. ~/.bash_wrappers
+fi
