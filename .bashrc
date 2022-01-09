@@ -1,7 +1,12 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+
+
+if [ DEBUG == "TRUE" ]; then
 echo "bash.rc running...."
+fi
+
 #printf '===========================\nTop 5 CPU processes (col 3)\n===========================\n'
 #ps aux | sort -rk 3,3 | head -n 6
 
