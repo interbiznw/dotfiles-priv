@@ -25,7 +25,7 @@ esac
 if [ -n "$TMUX" ]; then
 
     if [ $DEBUG == "TRUE" ]; then
-      echo "Tmux session detected"
+      echo "Tmux session detected, running .profile instead of .bashrc"
     fi
     
   # called inside tmux session, do tmux things
