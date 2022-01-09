@@ -5,6 +5,6 @@ export LESSOPEN='|~/.lessfilter %s'
 
 export EDITOR=/usr/bin/nano
 
-if [ $DEBUG == "TRUE" ]; then
+if [ "$DEBUG" == "TRUE" ]; then
 echo "************** bash_exports done ******************"
 fi
