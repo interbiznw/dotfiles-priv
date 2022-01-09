@@ -67,6 +67,10 @@ banip() {
     sudo ufw deny from "$1" to any
 }
 
+ican() {
+    curl icanhazip.com
+}
+
 unbanip() {
     #do things with parameters like $1 such as
     #mv "$1" "$1.bak"
