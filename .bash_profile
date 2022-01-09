@@ -3,6 +3,11 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 echo "bash_profile RUN FIRST"
 
+if [ -f ~/.bash-debug_true ]; then
+    echo "echoing debugging strings"
+    DEBUG="TRUE"
+fi
+
 # if this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -13,7 +18,9 @@ xterm*|rxvt*)
 esac
 
 if [ -n "$TMUX" ]; then
-    echo "Tmux session detected"
+    if [ DEBUG == "TRUE" ]; then
+        echo "Tmux session detected"
+    fi
     # called inside tmux session, do tmux things
     . ~/.profile
 
@@ -21,6 +28,8 @@ if [ -n "$TMUX" ]; then
 else
 
     # Trigger ~/.bashrc commands
-    echo "this is bash_profile, running bash.rc"
+    if [ DEBUG == "TRUE" ]; then
+        echo "this is bash_profile, running bash.rc"
+    fi
     . ~/.bashrc
 fi
