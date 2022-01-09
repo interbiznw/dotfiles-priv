@@ -2,6 +2,13 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export DEBUG="FALSE"
+
+if [ -f ~/.bash-debug_true ]; then
+    echo "echoing debugging strings"
+    export DEBUG="TRUE"
+fi
+
 if [ "$DEBUG" == "TRUE" ]; then
 echo "bash.rc running...."
 fi
