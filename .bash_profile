@@ -21,21 +21,19 @@ xterm*|rxvt*)
 esac
 
 if [ -n "$TMUX" ]; then
+
     if [ $DEBUG == "TRUE" ]; then
       echo "Tmux session detected"
-    else
-      #do nothing
     fi
+    
   # called inside tmux session, do tmux things
   . ~/.profile
- 
+
 else
 
 # Trigger ~/.bashrc commands
     if [ $DEBUG == "TRUE" ]; then
       echo "this is bash_profile, running bash.rc"
-    else
-      #do nothing
     fi
   . ~/.bashrc
 fi
