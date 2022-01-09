@@ -129,7 +129,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    echo "adding bash_aliases...."
+#    echo "adding bash_aliases...."
     . ~/.bash_aliases
 fi
 
