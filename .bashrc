@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-if [ $DEBUG == "TRUE" ]; then
+if [ "$DEBUG" == "TRUE" ]; then
 echo "bash.rc running...."
 fi
 
@@ -128,7 +128,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-	if [ $DEBUG == "TRUE" ]; then
+	if [ "$DEBUG" == "TRUE" ]; then
 		echo "adding bash_aliases...."
 	fi
     	. ~/.bash_aliases
@@ -139,7 +139,7 @@ fi
 # ~/.bash_exports, instead of them here directly.
 
 if [ -f ~/.bash_exports ]; then
-	if [ $DEBUG == "TRUE" ]; then
+	if [ "$DEBUG" == "TRUE" ]; then
 		echo "adding bash_exports...."
 	fi
 	. ~/.bash_exports
@@ -150,7 +150,7 @@ fi
 # ~/.dev_exports, instead of them here directly.
 
 if [ -f ~/.devexport_true ]; then
-	if [ $DEBUG == "TRUE" ]; then
+	if [ "$DEBUG" == "TRUE" ]; then
 		echo "adding dev_exports...."
 	fi
 	. ~/.dev_exports
@@ -161,7 +161,7 @@ fi
 # ~/.bash_wrappers, instead of them here directly.
 
 if [ -f ~/.bash_wrappers ]; then
-	if [ $DEBUG == "TRUE" ]; then
+	if [ "$DEBUG" == "TRUE" ]; then
 		echo "adding bash_wrappers...."
 	fi
 	. ~/.bash_wrappers
@@ -179,6 +179,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ $DEBUG == "TRUE" ]; then
+if [ "$DEBUG" == "TRUE" ]; then
 		echo "************** bash.rc done ******************"
 fi
