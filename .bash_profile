@@ -8,7 +8,7 @@ if [ -f $HOME/.bash-debug_true ]; then
     export DEBUG="TRUE"
 fi
 
-if [ $DEBUG == "TRUE" ]; then
+if [ "$DEBUG" == "TRUE" ]; then
     echo "bash_profile RUN FIRST"
 fi
 
@@ -23,7 +23,7 @@ esac
 
 if [ -n "$TMUX" ]; then
 
-    if [ $DEBUG == "TRUE" ]; then
+    if [ "$DEBUG" == "TRUE" ]; then
       echo "Tmux session detected, running .profile instead of .bashrc"
     fi
     
@@ -33,7 +33,7 @@ if [ -n "$TMUX" ]; then
 else
 
 # Trigger ~/.bashrc commands
-    if [ $DEBUG == "TRUE" ]; then
+    if [ "$DEBUG" == "TRUE" ]; then
       echo "this is bash_profile, running bash.rc"
     fi
   . ~/.bashrc
