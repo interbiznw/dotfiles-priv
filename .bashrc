@@ -2,8 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-
-if [ DEBUG == "TRUE" ]; then
+if [ $DEBUG == "TRUE" ]; then
 echo "bash.rc running...."
 fi
 
@@ -129,8 +128,10 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-#    echo "adding bash_aliases...."
-    . ~/.bash_aliases
+	if [ $DEBUG == "TRUE" ]; then
+		echo "adding bash_aliases...."
+	fi
+    	. ~/.bash_aliases
 fi
 
 # EXPORT definitions
@@ -138,8 +139,10 @@ fi
 # ~/.bash_exports, instead of them here directly.
 
 if [ -f ~/.bash_exports ]; then
-#    echo "adding bash_exports...."
-    . ~/.bash_exports
+	if [ $DEBUG == "TRUE" ]; then
+		echo "adding bash_exports...."
+	fi
+	. ~/.bash_exports
 fi
 
 # EXPORT DEV definitions
@@ -147,8 +150,10 @@ fi
 # ~/.dev_exports, instead of them here directly.
 
 if [ -f ~/.devexport_true ]; then
-#    echo "adding dev_exports...."
-    . ~/.dev_exports
+	if [ $DEBUG == "TRUE" ]; then
+		echo "adding dev_exports...."
+	fi
+	. ~/.dev_exports
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -161,4 +166,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#echo "************** bash.rc done ******************"
+
+if [ $DEBUG == "TRUE" ]; then
+		echo "************** bash.rc done ******************"
+fi
