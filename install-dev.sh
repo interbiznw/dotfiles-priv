@@ -19,6 +19,8 @@ npm install -g http-server
 
 npm install -g yarn
 
+curl https://rclone.org/install.sh | sudo bash
+
 FILE=/home/$USER/.ssh/id_rsa
 
 if [ -f "$FILE" ]; then
