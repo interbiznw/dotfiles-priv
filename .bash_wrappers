@@ -92,7 +92,7 @@ hexto64(){
 printf "%s" "$1" | xxd -r -p | base64
 }
 
-base64tohex(){
+64tohex(){
 printf "%s" "$1" | base64 -d -i | hexdump -v -e '/1 "%02x" '
 }
 
