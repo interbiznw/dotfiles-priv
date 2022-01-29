@@ -87,3 +87,12 @@ transfer(){ if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfe
 if [ "$DEBUG" == "TRUE" ]; then
 echo "************** bash_wrappers done ******************"
 fi
+
+hexto64(){
+printf "%s" "$1" | xxd -r -p | base64
+}
+
+base64tohex(){
+printf "%s" "$1" | base64 -d -i | hexdump -v -e '/1 "%02x" '
+}
+
